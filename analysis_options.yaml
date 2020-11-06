@@ -3,4 +3,6 @@ linter:
   rules:
     public_member_api_docs: false
     lines_longer_than_80_chars: false
-    always_declare_return_types: false
+
+    # if localized one needs to take this in for generated code
+    #always_declare_return_types: false
