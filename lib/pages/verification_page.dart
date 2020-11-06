@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class VerificationPage extends StatefulWidget {
-  final ValueChanged<String> didProvideVerificationCode;
 
   VerificationPage({Key key, this.didProvideVerificationCode})
       : super(key: key);
+
+  final ValueChanged<String> didProvideVerificationCode;
 
   @override
   State<StatefulWidget> createState() => _VerificationPageState();
@@ -17,7 +18,7 @@ class _VerificationPageState extends State<VerificationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        minimum: EdgeInsets.symmetric(horizontal: 40),
+        minimum: const EdgeInsets.symmetric(horizontal: 40),
         child: _verificationForm(),
       ),
     );
@@ -30,16 +31,18 @@ class _VerificationPageState extends State<VerificationPage> {
         // Verification Code TextField
         TextField(
           controller: _verificationCodeController,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
               icon: Icon(Icons.confirmation_number),
-              labelText: 'Verification code'),
+              labelText: 'Verification code',
+          ),
         ),
 
         // Verify Button
         FlatButton(
             onPressed: _verify,
-            child: Text('Verify'),
-            color: Theme.of(context).accentColor)
+            child: const Text('Verify'),
+            color: Theme.of(context).accentColor,
+        )
       ],
     );
   }

@@ -1,8 +1,9 @@
 abstract class AuthCredentials {
-  final String username;
-  final String password;
 
   AuthCredentials({this.username, this.password});
+
+  final String username;
+  final String password;
 }
 
 class LoginCredentials extends AuthCredentials {
@@ -11,8 +12,8 @@ class LoginCredentials extends AuthCredentials {
 }
 
 class SignUpCredentials extends AuthCredentials {
-  final String email;
-
   SignUpCredentials({String username, String password, this.email})
       : super(username: username, password: password);
+
+  final String email;
 }

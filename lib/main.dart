@@ -76,7 +76,7 @@ class _AwsGalleryAppState extends State<AwsGalleryApp> {
           } else {
             return Container(
               alignment: Alignment.center,
-              child: CircularProgressIndicator(),
+              child: const CircularProgressIndicator(),
             );
           }
         })

@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
 
-  final ValueChanged<LoginCredentials> didProvideCredentials;
-  final VoidCallback shouldShowSignUp;
-
   LoginPage({Key key, this.didProvideCredentials, this.shouldShowSignUp})
       : super(key: key);
+
+  final ValueChanged<LoginCredentials> didProvideCredentials;
+  final VoidCallback shouldShowSignUp;
 
   @override
   State<StatefulWidget> createState() => _LoginPageState();
@@ -23,14 +23,14 @@ class _LoginPageState extends State<LoginPage> {
 
     return Scaffold(
       body: SafeArea(
-          minimum: EdgeInsets.symmetric(horizontal: 40),
+          minimum: const EdgeInsets.symmetric(horizontal: 40),
           child: Stack(children: [
             _loginForm(),
             Container(
               alignment: Alignment.bottomCenter,
               child: FlatButton(
                   onPressed: widget.shouldShowSignUp,
-                  child: Text('Don\'t have an account? Sign up.'),
+                  child: const Text('Don\'t have an account? Sign up.'),
               ),
             )
           ])),
@@ -43,14 +43,14 @@ class _LoginPageState extends State<LoginPage> {
       children: [
         TextField(
           controller: _usernameController,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             icon: Icon(Icons.mail),
             labelText: 'Username',
           ),
         ),
         TextField(
           controller: _passwordController,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             icon: Icon(Icons.lock_open),
             labelText: 'Password',
           ),
@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
         ),
         FlatButton(
           onPressed: _login,
-          child: Text('Login'),
+          child: const Text('Login'),
           color: Theme.of(context).accentColor,
         ),
       ],
@@ -70,7 +70,9 @@ class _LoginPageState extends State<LoginPage> {
     final username = _usernameController.text.trim();
     final password = _passwordController.text.trim();
 
+    // ignore: avoid_print
     print('username: $username');
+    // ignore: avoid_print
     print('password: $password');
 
     final credentials = LoginCredentials(

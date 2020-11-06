@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 class SignUpPage extends StatefulWidget {
 
-  final ValueChanged<SignUpCredentials> didProvideCredentials;
-  final VoidCallback shouldShowLogin;
-
   SignUpPage({Key key, this.didProvideCredentials, this.shouldShowLogin})
       : super(key: key);
+
+  final ValueChanged<SignUpCredentials> didProvideCredentials;
+  final VoidCallback shouldShowLogin;
 
   @override
   State<StatefulWidget> createState() => _SignUpPageState();
@@ -22,7 +22,7 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          minimum: EdgeInsets.symmetric(horizontal: 40),
+          minimum: const EdgeInsets.symmetric(horizontal: 40),
           child: Stack(children: [
             // Sign Up Form
             _signUpForm(),
@@ -32,7 +32,7 @@ class _SignUpPageState extends State<SignUpPage> {
               alignment: Alignment.bottomCenter,
               child: FlatButton(
                   onPressed: widget.shouldShowLogin,
-                  child: Text('Already have an account? Login.')),
+                  child: const Text('Already have an account? Login.')),
             )
           ])),
     );
@@ -45,22 +45,28 @@ class _SignUpPageState extends State<SignUpPage> {
         // Username TextField
         TextField(
           controller: _usernameController,
-          decoration:
-          InputDecoration(icon: Icon(Icons.person), labelText: 'Username'),
+          decoration: const InputDecoration(
+              icon: Icon(Icons.person),
+              labelText: 'Username',
+          ),
         ),
 
         // Email TextField
         TextField(
           controller: _emailController,
-          decoration:
-          InputDecoration(icon: Icon(Icons.mail), labelText: 'Email'),
+          decoration: const InputDecoration(
+              icon: Icon(Icons.mail),
+              labelText: 'Email',
+          ),
         ),
 
         // Password TextField
         TextField(
           controller: _passwordController,
-          decoration: InputDecoration(
-              icon: Icon(Icons.lock_open), labelText: 'Password'),
+          decoration: const InputDecoration(
+              icon: Icon(Icons.lock_open),
+              labelText: 'Password',
+          ),
           obscureText: true,
           keyboardType: TextInputType.visiblePassword,
         ),
@@ -68,7 +74,7 @@ class _SignUpPageState extends State<SignUpPage> {
         // Sign Up Button
         FlatButton(
             onPressed: _signUp,
-            child: Text('Sign Up'),
+            child: const Text('Sign Up'),
             color: Theme.of(context).accentColor)
       ],
     );
@@ -79,8 +85,11 @@ class _SignUpPageState extends State<SignUpPage> {
     final email = _emailController.text.trim();
     final password = _passwordController.text.trim();
 
+    // ignore: avoid_print
     print('username: $username');
+    // ignore: avoid_print
     print('email: $email');
+    // ignore: avoid_print
     print('password: $password');
 
     final credentials = SignUpCredentials(

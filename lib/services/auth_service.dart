@@ -10,9 +10,9 @@ enum AuthFlowStatus {
 }
 
 class AuthState {
-  final AuthFlowStatus authFlowStatus;
-
   AuthState({this.authFlowStatus});
+
+  final AuthFlowStatus authFlowStatus;
 }
 
 class AuthService {

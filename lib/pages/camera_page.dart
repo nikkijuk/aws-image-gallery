@@ -5,11 +5,11 @@ import 'package:path_provider/path_provider.dart';
 
 class CameraPage extends StatefulWidget {
 
-  final CameraDescription camera;
-  final ValueChanged didProvideImagePath;
-
   CameraPage({Key key, this.camera, this.didProvideImagePath})
       : super(key: key);
+
+  final CameraDescription camera;
+  final ValueChanged didProvideImagePath;
 
   @override
   State<StatefulWidget> createState() => _CameraPageState();
@@ -33,16 +33,16 @@ class _CameraPageState extends State<CameraPage> {
         future: _initializeControllerFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return CameraPreview(this._controller);
+            return CameraPreview(_controller);
           } else {
-            return Center(
+            return const Center(
                 child: CircularProgressIndicator(),
             );
           }
         },
       ),
       floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.camera),
+          child: const Icon(Icons.camera),
           onPressed: _takePicture),
     );
   }
@@ -59,6 +59,7 @@ class _CameraPageState extends State<CameraPage> {
 
       widget.didProvideImagePath(path);
     } catch (e) {
+      // ignore: avoid_print
       print(e);
     }
   }

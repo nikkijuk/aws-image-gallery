@@ -4,9 +4,9 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
 class CameraFlow extends StatefulWidget {
-  final VoidCallback shouldLogOut;
-
   CameraFlow({Key key, this.shouldLogOut}) : super(key: key);
+
+  final VoidCallback shouldLogOut;
 
   @override
   State<StatefulWidget> createState() => _CameraFlowState();
@@ -15,7 +15,6 @@ class CameraFlow extends StatefulWidget {
 class _CameraFlowState extends State<CameraFlow> {
 
   CameraDescription _camera;
-
   bool _shouldShowCamera = false;
 
   List<MaterialPage> get _pages {
@@ -34,7 +33,7 @@ class _CameraFlowState extends State<CameraFlow> {
           child: CameraPage(
               camera: _camera,
               didProvideImagePath: (imagePath) {
-                  this._toggleCameraOpen(false);
+                  _toggleCameraOpen(false);
               },
           ),
         )
@@ -57,7 +56,7 @@ class _CameraFlowState extends State<CameraFlow> {
 
   void _toggleCameraOpen(bool isOpen) {
     setState(() {
-      this._shouldShowCamera = isOpen;
+      _shouldShowCamera = isOpen;
     });
   }
 
@@ -65,7 +64,7 @@ class _CameraFlowState extends State<CameraFlow> {
     final camerasList = await availableCameras();
     setState(() {
       final firstCamera = camerasList.first;
-      this._camera = firstCamera;
+      _camera = firstCamera;
     });
   }
 
