@@ -1,9 +1,12 @@
+import 'package:amplify_core/amplify_core.dart';
 import 'package:aws_image_gallery/pages/login_page.dart';
 import 'package:aws_image_gallery/pages/signup_page.dart';
 import 'package:aws_image_gallery/pages/verification_page.dart';
 import 'package:aws_image_gallery/services/auth_service.dart';
 import 'package:aws_image_gallery/widgets/camera_flow.dart';
 import 'package:flutter/material.dart';
+
+import 'amplifyconfiguration.dart';
 
 void main() {
   runApp(AwsGalleryApp());
@@ -17,11 +20,14 @@ class AwsGalleryApp extends StatefulWidget {
 
 class _AwsGalleryAppState extends State<AwsGalleryApp> {
 
+  final _amplify = Amplify();
   final _authService = AuthService();
 
   @override
   void initState() {
     super.initState();
+
+    _configureAmplify();
     _authService.showLogin();
   }
 
@@ -82,5 +88,15 @@ class _AwsGalleryAppState extends State<AwsGalleryApp> {
         })
     );
   }
+
+  void _configureAmplify() async {
+    try {
+      await _amplify.configure(amplifyconfig);
+      print('Successfully configured Amplify 🎉');
+    } catch (e) {
+      print('Could not configure Amplify ☠️');
+    }
+  }
+
 }
 
