@@ -1,5 +1,6 @@
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:amplify_core/amplify_core.dart';
+import 'package:amplify_storage_s3/amplify_storage_s3.dart';
 import 'package:aws_image_gallery/pages/login_page.dart';
 import 'package:aws_image_gallery/pages/signup_page.dart';
 import 'package:aws_image_gallery/pages/verification_page.dart';
@@ -94,7 +95,11 @@ class _AwsGalleryAppState extends State<AwsGalleryApp> {
   }
 
   void _configureAmplify() async {
-    await _amplify.addPlugin(authPlugins: [AmplifyAuthCognito()]);
+
+    await _amplify.addPlugin(
+        authPlugins: [AmplifyAuthCognito()],
+        storagePlugins: [AmplifyStorageS3()],
+    );
 
     try {
       await _amplify.configure(amplifyconfig);
