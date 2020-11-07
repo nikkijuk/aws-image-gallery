@@ -92,8 +92,12 @@ class _AwsGalleryAppState extends State<AwsGalleryApp> {
   void _configureAmplify() async {
     try {
       await _amplify.configure(amplifyconfig);
+
+      // ignore: avoid_print
       print('Successfully configured Amplify 🎉');
     } catch (e) {
+
+      // ignore: avoid_print
       print('Could not configure Amplify ☠️');
     }
   }
