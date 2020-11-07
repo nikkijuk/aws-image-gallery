@@ -1,1 +1,10 @@
-{}
+{
+	"auth": {
+		"awsimagegallery8c41105d": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}

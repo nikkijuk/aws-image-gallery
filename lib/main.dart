@@ -1,3 +1,4 @@
+import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:amplify_core/amplify_core.dart';
 import 'package:aws_image_gallery/pages/login_page.dart';
 import 'package:aws_image_gallery/pages/signup_page.dart';
@@ -29,6 +30,9 @@ class _AwsGalleryAppState extends State<AwsGalleryApp> {
 
     _configureAmplify();
     _authService.showLogin();
+
+    // ignore: cascade_invocations
+    _authService.checkAuthStatus();
   }
 
   @override
@@ -90,6 +94,8 @@ class _AwsGalleryAppState extends State<AwsGalleryApp> {
   }
 
   void _configureAmplify() async {
+    await _amplify.addPlugin(authPlugins: [AmplifyAuthCognito()]);
+
     try {
       await _amplify.configure(amplifyconfig);
 
