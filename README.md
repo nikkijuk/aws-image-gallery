@@ -29,9 +29,11 @@ Dart code on [lab](https://aws.amazon.com/getting-started/hands-on/build-flutter
 
 SingUp was implemented in a way that didn't seem to work. I needed to read [authentication docs](https://docs.amplify.aws/lib/auth/signin/q/platform/flutter) and change it.
 
-For most part it was clear what one should do to follow lab, but it wasn't always evident to me.
+I added [equatable](https://pub.dev/packages/equatable) helper lib for toString, but this wasn't really necessary, even if it helped a bit with console log debugging.
 
 Navigation could be simplified using [Flutter Bloc](https://pub.dev/packages/flutter_bloc), but at this lab it was good to use basic flutter features.
+
+For most part it was clear what one should do to follow lab, but it wasn't always evident to me.
 
 ## Documentation
 
