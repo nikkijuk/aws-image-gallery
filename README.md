@@ -31,7 +31,7 @@ SingUp was implemented in a way that didn't seem to work. I needed to read [auth
 
 For most part it was clear what one should do to follow lab, but it wasn't always evident to me.
 
-Navigation could be simplified using [Flutter Bloc](https://pub.dev/packages/flutter_bloc), but here it was good to use basic flutter features.
+Navigation could be simplified using [Flutter Bloc](https://pub.dev/packages/flutter_bloc), but at this lab it was good to use basic flutter features.
 
 ## Documentation
 
