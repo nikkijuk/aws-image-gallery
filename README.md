@@ -23,7 +23,7 @@ Important: current focus is at Mobile and IOS & Android parity, not at Desktop o
 
 ## Learnings
 
-It all worked pretty fine. I thinks aws-aplify-flutter is very promising technology.
+It all worked pretty fine. I thinks aws-amplify-flutter is very promising technology.
 
 Dart code on [lab](https://aws.amazon.com/getting-started/hands-on/build-flutter-app-amplify/) was not always completely tidy, but I added [Very Good Analysis](https://pub.dev/packages/very_good_analysis) to project and styling was easy to fix.
 
