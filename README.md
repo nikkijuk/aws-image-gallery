@@ -39,7 +39,7 @@ For most part it was clear what one should do to follow lab, but it wasn't alway
 
 Logs have lot of messages of deprecated dependencies, dependencies containing critical securita flaws, and there's some error messages which are confusing. 
 
-Removing project environment from AWS with *amplify delete* crashed, but other CLI commands worked as expected.
+Removing project environment from AWS with *"amplify delete"* crashed, but other CLI commands worked as expected.
 
 ## Documentation
 
