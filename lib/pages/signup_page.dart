@@ -1,3 +1,5 @@
+import 'package:aws_image_gallery/services/analytics_events.dart';
+import 'package:aws_image_gallery/services/analytics_service.dart';
 import 'package:aws_image_gallery/services/auth_credentials.dart';
 import 'package:flutter/material.dart';
 
@@ -97,6 +99,9 @@ class _SignUpPageState extends State<SignUpPage> {
         email: email,
         password: password,
     );
+
     widget.didProvideCredentials(credentials);
+
+    AnalyticsService.log(SignUpEvent());
   }
 }

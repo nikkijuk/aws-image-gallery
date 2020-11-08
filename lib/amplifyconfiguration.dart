@@ -35,6 +35,17 @@ const amplifyconfig = ''' {
                         "Bucket": "s3galleryimagesbucket121734-dev",
                         "Region": "eu-central-1"
                     }
+                },
+                "PinpointAnalytics": {
+                    "Default": {
+                        "AppId": "5116f46d4775425db141952f755784e0",
+                        "Region": "eu-central-1"
+                    }
+                },
+                "PinpointTargeting": {
+                    "Default": {
+                        "Region": "eu-central-1"
+                    }
                 }
             }
         }
@@ -45,6 +56,19 @@ const amplifyconfig = ''' {
                 "bucket": "s3galleryimagesbucket121734-dev",
                 "region": "eu-central-1",
                 "defaultAccessLevel": "guest"
+            }
+        }
+    },
+    "analytics": {
+        "plugins": {
+            "awsPinpointAnalyticsPlugin": {
+                "pinpointAnalytics": {
+                    "appId": "5116f46d4775425db141952f755784e0",
+                    "region": "eu-central-1"
+                },
+                "pinpointTargeting": {
+                    "region": "eu-central-1"
+                }
             }
         }
     }

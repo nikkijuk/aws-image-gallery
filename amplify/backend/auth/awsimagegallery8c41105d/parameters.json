@@ -1,6 +1,6 @@
 {
     "identityPoolName": "awsimagegallery8c41105d_identitypool_8c41105d",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "awsima8c41105d",
     "userPoolName": "awsimagegallery8c41105d_userpool_8c41105d",
     "autoVerifiedAttributes": [

@@ -1,3 +1,5 @@
+import 'package:aws_image_gallery/services/analytics_events.dart';
+import 'package:aws_image_gallery/services/analytics_service.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart';
@@ -58,6 +60,12 @@ class _CameraPageState extends State<CameraPage> {
       await _controller.takePicture(path);
 
       widget.didProvideImagePath(path);
+
+      AnalyticsService.log(
+          TakePictureEvent(
+              cameraDirection: widget.camera.lensDirection.toString(),
+          )
+      );
     } catch (e) {
       // ignore: avoid_print
       print(e);

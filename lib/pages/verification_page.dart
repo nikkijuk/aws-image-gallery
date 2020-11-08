@@ -1,3 +1,5 @@
+import 'package:aws_image_gallery/services/analytics_events.dart';
+import 'package:aws_image_gallery/services/analytics_service.dart';
 import 'package:flutter/material.dart';
 
 class VerificationPage extends StatefulWidget {
@@ -49,6 +51,9 @@ class _VerificationPageState extends State<VerificationPage> {
 
   void _verify() {
     final verificationCode = _verificationCodeController.text.trim();
+
     widget.didProvideVerificationCode(verificationCode);
+
+    AnalyticsService.log(VerificationEvent());
   }
 }

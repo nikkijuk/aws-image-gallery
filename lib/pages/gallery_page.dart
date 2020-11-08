@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:aws_image_gallery/services/analytics_events.dart';
+import 'package:aws_image_gallery/services/analytics_service.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +12,9 @@ class GalleryPage extends StatelessWidget {
         this.imageUrlsController,
         this.shouldLogOut,
         this.shouldShowCamera})
-      : super(key: key);
+  : super(key: key) {
+    AnalyticsService.log(ViewGalleryEvent());
+  }
 
   final StreamController<List<String>> imageUrlsController;
   final VoidCallback shouldLogOut;

@@ -59,6 +59,7 @@ class AuthService {
       // of account is not yet confirmed using confirmSignUp and confirmation code.
       // I felt it safe to change this so that signUp needs always to be verified
       // result: login never follows signUp directly as each singUp is verified always
+      // docs: https://docs.amplify.aws/lib/auth/signin/q/platform/flutter
       /*
       if (result.isSignUpComplete) {
         loginWithCredentials(credentials);
