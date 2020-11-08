@@ -49,7 +49,7 @@ class AuthService {
       );
 
       // ignore: avoid_print
-      print ('signup $result');
+      print ('SignUp result $result');
 
       _credentials = credentials;
       _emitState(AuthFlowStatus.verification);
@@ -86,9 +86,7 @@ class AuthService {
       if (result.isSignUpComplete) {
         loginWithCredentials(_credentials);
       } else {
-        // 4
-        // Follow more steps
-        //     _emitState(AuthFlowStatus.session);
+        // ??
       }
     } on AuthError catch (authError) {
 
